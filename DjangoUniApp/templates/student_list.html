@@ -5,7 +5,14 @@
     <title>Django University App</title>
 </head>
 <body>
-<h1>Hola!</h1>
+<h1>Hello!</h1>
 <h2>Clase: {{ clase }}</h2>
+{% if estudiantes %}
+<ul>
+    {% for estudiante in estudiantes %}
+    <li>{{ estudiante.nombre }} {{ estudiante.apellidos }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 </body>
 </html>

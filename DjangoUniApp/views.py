@@ -1,8 +1,9 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
+from .models import Student
 
 def index(request):
-    context = {'clase': 'Aprendiendo Django'}
+    estudiantes = Student.objects.all()
+    context = {'clase': 'Aprendiendo Django', 'estudiantes': estudiantes}
     return render(request, 'student_list.html', context)
