@@ -4,4 +4,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Listado de estudiantes")
+    context = {'clase': 'Aprendiendo Django'}
+    return render(request, 'student_list.html', context)
